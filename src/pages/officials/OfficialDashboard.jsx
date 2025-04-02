@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useUser } from "../../context/UserContext";
 import OfficialProfile from "./OfficialProfile";
+import FormDetails from "../FormDetails";
 
-const UserDashboard = () => {
+const OfficialDashboard = () => {
     const location = useLocation();
     const [activeComponent, setActiveComponent] = useState("profile");
     const { user, logoutUser } = useUser();
@@ -13,6 +14,8 @@ const UserDashboard = () => {
         switch (activeComponent) {
             case "profile":
                 return <OfficialProfile />;
+            case "gst-forms":
+                return <FormDetails />;
             default:
                 return <p className="text-gray-600">Please select an option from above.</p>;
         }
@@ -49,6 +52,12 @@ const UserDashboard = () => {
                     Official Profile
                 </button>
                 <button
+                    onClick={() => setActiveComponent("gst-forms")}
+                    className={getButtonClass("gst-forms")}
+                >
+                    GST Forms
+                </button>
+                <button
                     onClick={() => handleLogout()}
                     className="w-100 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition duration-200"
                 >
@@ -61,4 +70,4 @@ const UserDashboard = () => {
     );
 };
 
-export default UserDashboard;
+export default OfficialDashboard;

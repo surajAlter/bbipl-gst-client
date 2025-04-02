@@ -57,7 +57,6 @@ const formFields = [
     'nameAuthSignatory',
     'placeAuthSignatory',
     'designationAuthSignatory',
-    'submitDate',
 
 
     //temp
@@ -146,7 +145,7 @@ function GstRegistration() {
     const [isFetching, setIsFetching] = useState(false);
     const [fetchedSteps, setFetchedSteps] = useState(new Set());
     const [activeSection, setActiveSection] = useState(sections[0].id);
-    const [furthestStep, setFurthestStep] = useState(sections.length - 1);
+    const [furthestStep, setFurthestStep] = useState(0);
     const [isCurrentStepValid, setIsCurrentStepValid] = useState(false);
     const [isFormVerified, setIsFormVerified] = useState(false);
     const [formData, setFormData] = useState(formFieldStructure);
@@ -226,7 +225,7 @@ function GstRegistration() {
     }, [sessionId, setSessionId]);
 
     const handleNext = async () => {
-        console.log(formData);
+        // console.log(formData);
         if (!isCurrentStepValid) return;
 
         const newFurthest = Math.max(furthestStep, currentStepIndex + 1);
@@ -293,6 +292,7 @@ function GstRegistration() {
 
     const handleSubmit = async () => {
         try {
+            // console.log(formData);
             const response = await axios.post(
                 `${process.env.REACT_APP_SERVER_URL}/api/gst/`,
                 formData,
@@ -929,8 +929,9 @@ Non-Resident Online Services Provider and/or Non-Resident Online Money Gaming Su
                                         <div className="flex">
                                             <input
                                                 type="date"
+                                                name="dateLiabilityRegister"
                                                 value={formData.dateLiabilityRegister}
-                                                onChange={(e) => setFormData({ ...formData, dateLiabilityRegister: e.target.value })}
+                                                onChange={handleChange}
                                                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                             // min={new Date().toISOString().split('T')[0]} // Optional: Restrict to past dates
                                             />
@@ -2148,7 +2149,7 @@ Non-Resident Online Services Provider and/or Non-Resident Online Money Gaming Su
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                                        Last Name
+                                        Range
                                     </label>
                                     <input
                                         type="text"

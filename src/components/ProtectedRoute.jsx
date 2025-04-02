@@ -15,7 +15,7 @@ const ProtectedRoute = ({ children, requiredRole }) => {
         }
 
         // console.log("Protected Route - User role:", user?.role, ", Required role:", requiredRole);
-        if (user && (user.role === requiredRole || user.role === "user")) {
+        if (user && (user.role === requiredRole || requiredRole === "user")) {
             setIsAuthorized(true);
         } else {
             setIsAuthorized(false);

@@ -43,12 +43,9 @@ const UserProfile = () => {
                         <img src={user?.dp ? user.dp : "../../../../assets/default-user.png"} alt="user badge" className='h-32 w-32 mx-auto rounded-xl object-cover' />
                         <h2 className="text-3xl font-semibold text-center text-blue-600 mb-4">User Profile</h2>
                         <div className="space-y-4">
-                            <p className="border-b pb-2"><strong className="text-gray-800">First Name:</strong> {user?.firstName}</p>
-                            <p className="border-b pb-2"><strong className="text-gray-800">Last Name:</strong> {user?.lastName || "N/A"}</p>
+                            <p className="border-b pb-2"><strong className="text-gray-800">Business Name:</strong> {user?.businessName || "N/A"}</p>
                             <p className="border-b pb-2"><strong className="text-gray-800">Email:</strong> {user?.email}</p>
-                            <p className="border-b pb-2"><strong className="text-gray-800">Mobile:</strong> {user?.countryCode || "N/A"}-{user?.mobile}</p>
-                            <p className="border-b pb-2"><strong className="text-gray-800">Gender:</strong> {user?.gender}</p>
-                            <p className="border-b pb-2"><strong className="text-gray-800">Date of Birth:</strong> {user.dob?.date} {new Date(0, user.dob?.month - 1).toLocaleString('default', { month: 'short' })}, {user.dob?.year}</p>
+                            <p className="border-b pb-2"><strong className="text-gray-800">Mobile:</strong> +91-{user?.mobile}</p>
                         </div>
                     </div>
                 )}

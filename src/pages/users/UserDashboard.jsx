@@ -8,7 +8,7 @@ import FormDetails from "../FormDetails";
 const UserDashboard = () => {
     const location = useLocation();
     const search = queryString.parse(location.search);
-    console.log(location, "\n\n", search);
+    // console.log(location, "\n\n", search);
     const selectedComponent = search.selected || "profile";
     // console.log(location);
     const [activeComponent, setActiveComponent] = useState(selectedComponent);
@@ -26,7 +26,7 @@ const UserDashboard = () => {
                     <div>
                         {/* <p className="text-gray-600">Form component goes here.</p> */};
                         <h2 className="text-2xl font-bold text-gray-800 mb-4">Available forms</h2>
-                        <Link to="/loan-application-form" className="text-blue-500 hover:underline">Loan Application</Link>
+                        <Link to="/pages/gst-registration" className="text-blue-500 hover:underline">GST Registration</Link>
                     </div>
                 );
             default:
@@ -54,7 +54,7 @@ const UserDashboard = () => {
         <div className="p-1 bg-gray-100">
             <div>
                 <h1 className="text-3xl font-bold text-gray-800 mb-6 ml-14">
-                    Hi! {user?.firstName} {user?.lastName}
+                    Hi! {user?.firstName}
                 </h1>
             </div>
             <div className="grid gap-2 grid-cols-2 md:grid-cols-4 p-2">

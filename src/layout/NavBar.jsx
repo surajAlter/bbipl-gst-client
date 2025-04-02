@@ -22,6 +22,8 @@ const NavBar = () => {
     navigate("/");
   };
 
+  const dashboardUrl = user && (user.role === "admin" ? "/pages/admin-dashboard" : (user.role === "backendSupport" ? "/pages/backend-support-dashboard" : "/pages/user-dashboard"));
+
   return (
     <nav className="bg-gray-50 text-black p-4 shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex items-center justify-between">
@@ -51,9 +53,15 @@ const NavBar = () => {
             <Link onClick={handleMenuItemClick} to="/pages/services" className="hover:text-blue-600 transition">Services</Link>
           </li> */}
 
-          {user && (
+          {user && !user.role && (
             <li>
               <Link to="/pages/gst-registration" className="hover:text-blue-600 transition">GST Registration</Link>
+            </li>
+          )}
+
+          {user && (
+            <li>
+              <Link to={dashboardUrl} className="hover:text-blue-600 transition">Dashboard</Link>
             </li>
           )}
 
