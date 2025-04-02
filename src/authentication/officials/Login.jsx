@@ -13,7 +13,7 @@ function Login() {
     empId: "",
     password: "",
     role: '',
-    dept: ''
+    // dept: ''
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -148,7 +148,7 @@ function Login() {
             </div>
           </div>
 
-          <div className="mb-6">
+          {/* <div className="mb-6">
             <label
               htmlFor="dept"
               className=" block text-sm font-medium text-gray-700 mb-2"
@@ -163,13 +163,10 @@ function Login() {
               className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             >
-              {/* <option value="admin">Admin</option> */}
-              {/* <option value="developer">Developer</option> */}
-              {/* <option value="construction">Construction</option> */}
               <option value="">Select Department</option>
               <option value="finance">Finance</option>
             </select>
-          </div>
+          </div> */}
 
 
           <div className="mb-6">

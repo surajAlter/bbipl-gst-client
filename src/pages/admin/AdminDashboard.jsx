@@ -2,15 +2,11 @@ import React, { useState } from "react";
 import Details from "./Details"; // Import the Details component
 import Upload from "./UploadFiles"; // Import the Upload component
 import { useNavigate, useLocation } from "react-router-dom";
-import ContactUsMessages from "./ContactUsMessages";
-import FormRequirementDetails from "./FormRequirementDetails";
-import SiteManagement from "./SitesUpdateManagement";
-import ShowUserAttendance from "./ShowUserAttendance";
+import FormDetails from "../FormDetails";
 import { useUser } from "../../context/UserContext";
 import OfficialProfile from "../officials/OfficialProfile";
 
 const AdminDashboard = () => {
-  const location = useLocation();
   const [activeComponent, setActiveComponent] = useState("profile"); // State to track active component
   const { user, logoutUser } = useUser();
 
@@ -24,14 +20,8 @@ const AdminDashboard = () => {
         return <Details />;
       case "upload":
         return <Upload />;
-      case "contactUsMessages":
-        return <ContactUsMessages />;
       case "form-requirements":
-        return <FormRequirementDetails />;
-      case "sites-management":
-        return <SiteManagement />;
-      case "showUserAttendance":
-        return <ShowUserAttendance />;
+        return <FormDetails />;
       default:
         return (
           <p className="text-gray-600">Please select an option from above.</p>
@@ -60,7 +50,7 @@ const AdminDashboard = () => {
           Hi! {user?.firstName} {user?.lastName}
         </h1>
       </div>
-      <div className="grid gap-2 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 p-2">
+      <div className="grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 p-2">
         <button
           onClick={() => setActiveComponent("profile")}
           className={getButtonClass("profile")}
@@ -81,30 +71,12 @@ const AdminDashboard = () => {
         >
           Add Official
         </button>
-        {/* <button
-          onClick={() => setActiveComponent("sites-management")}
-          className={getButtonClass("sites-management")}
-        >
-          Add Site
-        </button> */}
         <button
           onClick={() => setActiveComponent("form-requirements")}
           className={getButtonClass("form-requirements")}
         >
-          Loan Application Forms
+          GST Registration Forms
         </button>
-        <button
-          onClick={() => setActiveComponent("contactUsMessages")}
-          className={getButtonClass("contactUsMessages")}
-        >
-          Contact Us
-        </button>
-        {/* <button
-          onClick={() => setActiveComponent("showUserAttendance")}
-          className={getButtonClass("showUserAttendance")}
-        >
-          Attendance
-        </button> */}
         <button
           onClick={() => handleLogout()}
           className="w-100 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition duration-200"

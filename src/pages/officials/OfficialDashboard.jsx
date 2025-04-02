@@ -44,7 +44,7 @@ const OfficialDashboard = () => {
                     Hi! {user?.firstName} {user?.lastName}
                 </h1>
             </div>
-            <div className="grid gap-2 grid-cols-2 md:grid-cols-4 p-2">
+            <div className="grid gap-2 grid-cols-2 md:grid-cols-3 p-2">
                 <button
                     onClick={() => setActiveComponent("profile")}
                     className={getButtonClass("profile")}

@@ -8,7 +8,7 @@ const Admin = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [filters, setFilters] = useState({
     role: "",
-    dept: "",
+    // dept: "",
     mobile: "",
     officialId: "",
   });
@@ -52,10 +52,11 @@ const Admin = () => {
           filters.mobile === "" || item.mobile.includes(filters.mobile);
         const idMatch =
           filters.officialId === "" || String(item.officialId).includes(filters.officialId);
-        const deptMatch =
-          filters.dept === "" || item.dept.toLowerCase().includes(filters.dept.toLowerCase());
+        // const deptMatch =
+        //   filters.dept === "" || item.dept.toLowerCase().includes(filters.dept.toLowerCase());
 
-        return roleMatch && mobileMatch && idMatch && deptMatch;
+        return roleMatch && mobileMatch && idMatch
+        // && deptMatch;
       });
       setFilteredData(filtered); // Update the filtered data based on the filters
     };
@@ -67,8 +68,8 @@ const Admin = () => {
     <div className="min-h-screen w-full bg-gray-100">
       <div className="container mx-auto bg-white p-2 rounded-lg shadow-md">
         {/* Filters */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {/* <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Filter by Department
             </label>
@@ -80,11 +81,9 @@ const Admin = () => {
               className="w-full p-3 border rounded-md text-gray-700"
             >
               <option value="">All Departments</option>
-              {/* <option value="developer">Developer</option> */}
               <option value="finance">Finance</option>
-              {/* <option value="civil">Civil</option> */}
             </select>
-          </div>
+          </div> */}
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -99,10 +98,10 @@ const Admin = () => {
             >
               <option value="">All Roles</option>
               <option value="admin">Admin</option>
-              <option value="manager">Manager</option>
+              {/* <option value="manager">Manager</option> */}
               <option value="backendSupport">Backend Support</option>
-              <option value="teamLeader">Team Leader</option>
-              <option value="telecaller">Telecaller</option>
+              {/* <option value="teamLeader">Team Leader</option>
+              <option value="telecaller">Telecaller</option> */}
             </select>
           </div>
 
@@ -145,7 +144,6 @@ const Admin = () => {
                 <th className="border border-gray-300 p-3 text-left">Official ID</th>
                 <th className="border border-gray-300 p-3 text-left">Name</th>
                 <th className="border border-gray-300 p-3 text-left">Role</th>
-                <th className="border border-gray-300 p-3 text-left">Department</th>
                 <th className="border border-gray-300 p-3 text-left">Mobile</th>
                 <th className="border border-gray-300 p-3 text-left">Actions</th>
               </tr>
@@ -161,7 +159,7 @@ const Admin = () => {
                     <td className="border border-gray-300 p-3">{item.officialId}</td>
                     <td className="border border-gray-300 p-3">{`${item.firstName} ${item.lastName}`}</td>
                     <td className="border border-gray-300 p-3">{item.role}</td>
-                    <td className="border border-gray-300 p-3">{item.dept}</td>
+                    {/* <td className="border border-gray-300 p-3">{item.dept}</td> */}
                     <td className="border border-gray-300 p-3">{item.mobile}</td>
                     <td className="border border-gray-300 p-3">
                       <button
@@ -198,7 +196,7 @@ const Admin = () => {
             <p><strong>ID:</strong> {selectedOfficial.officialId}</p>
             <p><strong>Name:</strong> {`${selectedOfficial.firstName} ${selectedOfficial.lastName}`}</p>
             <p><strong>Role:</strong> {selectedOfficial.role}</p>
-            <p><strong>Department:</strong> {selectedOfficial.dept}</p>
+            {/* <p><strong>Department:</strong> {selectedOfficial.dept}</p> */}
             <p><strong>Email:</strong> {selectedOfficial.email}</p>
             <p><strong>Phone:</strong> {selectedOfficial.countryCode}-{selectedOfficial.mobile}</p>
             <div className="mt-4">

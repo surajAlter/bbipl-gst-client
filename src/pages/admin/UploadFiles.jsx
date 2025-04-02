@@ -15,7 +15,7 @@ const FileUpload = () => {
         countryCode: '',
         gender: '',
         dob: '',
-        dept: '',
+        // dept: '',
         role: ''
     });
     const [loading, setLoading] = useState(false);
@@ -201,7 +201,7 @@ const FileUpload = () => {
                             className="block mb-2 mt-1 w-full"
                         />
                     </label>
-                    <label>
+                    {/* <label>
                         Department
                         <select
                             id="dept"
@@ -214,7 +214,7 @@ const FileUpload = () => {
                             <option value="">Select Department</option>
                             <option value="finance">Finance</option>
                         </select>
-                    </label>
+                    </label> */}
                     <label>
                         Role
                         <select
@@ -227,10 +227,7 @@ const FileUpload = () => {
                         >
                             <option value="">Select Role</option>
                             <option value="admin">Admin</option>
-                            <option value="manager">Manager</option>
                             <option value="backendSupport">Backend Support</option>
-                            <option value="teamLeader">Team Leader</option>
-                            <option value="telecaller">Telecaller</option>
                         </select>
                     </label>
 

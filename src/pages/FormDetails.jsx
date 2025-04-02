@@ -52,7 +52,7 @@ export default function FormDetails() {
         <div className="bg-gray-100 py-6">
             <div className="mx-auto">
                 <h2 className="max-md:text-center text-3xl font-bold text-gray-800 mb-6">
-                    Filled GST Application Details
+                    GST Application Details
                 </h2>
                 {selectedCustomer ? (
                     <GstForm
@@ -72,6 +72,7 @@ export default function FormDetails() {
                                                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Person Name</th>
                                                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Residential Address</th>
                                                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Reason</th>
+                                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody className="bg-white divide-y divide-gray-200">

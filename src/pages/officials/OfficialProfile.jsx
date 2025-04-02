@@ -49,7 +49,7 @@ const OfficialProfile = () => {
                             <p className="border-b pb-2"><strong className="text-gray-800">Mobile:</strong> {official?.countryCode || "N/A"}-{official?.mobile}</p>
                             <p className="border-b pb-2"><strong className="text-gray-800">Gender:</strong> {official?.gender}</p>
                             <p className="border-b pb-2"><strong className="text-gray-800">Date of Birth:</strong> {official.dob?.date} {new Date(0, official.dob?.month - 1).toLocaleString('default', { month: 'short' })}, {official.dob?.year}</p>
-                            <p className="border-b pb-2"><strong className="text-gray-800">Department:</strong> {official?.dept}</p>
+                            {/* <p className="border-b pb-2"><strong className="text-gray-800">Department:</strong> {official?.dept}</p> */}
                             <p className="border-b pb-2"><strong className="text-gray-800">Role:</strong> {official?.role}</p>
                         </div>
                     </div>

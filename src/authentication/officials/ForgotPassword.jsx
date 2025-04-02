@@ -5,7 +5,7 @@ import { ClipLoader } from "react-spinners";
 
 const OfficialForgotPassword = () => {
     const [input, setInput] = useState("");
-    const [dept, setDept] = useState("");
+    // const [dept, setDept] = useState("");
     const [role, setRole] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
@@ -21,7 +21,7 @@ const OfficialForgotPassword = () => {
             setError("Please enter input!");
             setLoading(false);
             return;
-        } else if (!dept || !role) {
+        } else if (!role) {
             setError("Please select all the options!");
             setLoading(false);
             return;
@@ -35,7 +35,7 @@ const OfficialForgotPassword = () => {
                 dataToSend["officialId"] = input;
             }
 
-            dataToSend["dept"] = dept;
+            // dataToSend["dept"] = dept;
             dataToSend["role"] = role;
             // console.log(dataToSend);
 
@@ -74,7 +74,7 @@ const OfficialForgotPassword = () => {
                     />
                 </div>
 
-                <div className="mb-6">
+                {/* <div className="mb-6">
                     <label
                         htmlFor="dept"
                         className=" block text-sm font-medium text-gray-700 mb-2"
@@ -92,7 +92,7 @@ const OfficialForgotPassword = () => {
                         <option value="">Select Department</option>
                         <option value="finance">Finance</option>
                     </select>
-                </div>
+                </div> */}
 
 
                 <div className="mb-6">
